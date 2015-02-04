@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="artTemplate-master/dist/template.js"></script>
+
+</head>
+<body>
+<script>
+    var tel = /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/g ;
+    var mobile = 13008831542;
+    var result = tel.test(mobile);
+    if(result){
+        console.log('chen')
+    }else{
+        console.log('shibai')
+    }
+//    var tpl = '{{each list as value i}}'
+//           +  '<div class="form-control comment" data-id="" style="border: none">'
+//           +  '<span style="display: block">{{value.question}}</span>'
+//           +  '</div>'
+//           +  '<div class="form-control comment" data-id="" style="border: none">'
+//           +  '<input type="radio" name="bill[]" value="1"  style="width: 14px;height: 14px;" disabled>非常满意&nbsp'
+//           +  '<input type="radio" name="bill[]" value="2"  style="width: 14px;height: 14px;" disabled>很满意&nbsp;'
+//           +  '<input type="radio" name="bill[]" value="3"  style="width: 14px;height: 14px;" disabled>一般&nbsp;'
+//           +  '<input type="radio" name="bill[]" value="4"  style="width: 14px;height: 14px;" disabled>不满意&nbsp;'
+//           +  '<input type="radio" name="bill[]" value="5"  style="width: 14px;height: 14px;" disabled>非常不满意&nbsp;'
+//           +  '</div>'
+//           +  '{{/each}}'
+//    var load = template.compile(tpl);
+//    var html = load({
+//        list: data.comment
+//    });
+//   $('#questionComment').html(html);
+    var questtion ={
+        q1:'非常满意',
+        q2:'满意',
+        q3:'一般',
+        q4:'糟糕'
+    }
+    console.log(JSON.stringify(questtion));
+</script>
+</body>
+</html>
