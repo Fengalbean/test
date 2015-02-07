@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery-easyui-1.4.1/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="jquery-easyui-1.4.1/themes/icon.css">
+    <script type="text/javascript" src="jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h2>Tooltip Dialog</h2>
+    <p>This sample shows how to create a tooltip dialog.</p>
+    <div style="margin:20px 0;"></div>
+    <div style="padding:10px 200px">
+        <p><a id="dd" href="javascript:void(0)">Click here</a> to see the tooltip dialog.
+    </div>
+
+</div>
+<script>
+    $(function(){
+        var tpl = '<table class="table table-border">'+
+                '<tr>'
+                +'<td></td>'
+                + '<td></td>'
+                +'<td></td>'
+                +'<td></td>'
+                +' </tr>'
+                +' <tr>'
+                +'<td></td>'
+                +'<td></td>'
+                +'<td></td>'
+                +'<td></td>'
+                +' </tr>'
+                +' <tr>'
+                +' <td></td>'
+                + '<td></td>'
+                +' <td></td>'
+                + ' <td></td>'
+                + '</tr>'
+                + '<tr>'
+                + ' <td></td>'
+                + '<td></td>'
+                + '<td></td>'
+                +'<td></td>'
+                +'</tr>'
+               + '</table>';
+        $('#dd').tooltip({
+            content: tpl,
+            showEvent: 'click',
+            onShow: function(){
+                var t = $(this);
+                t.tooltip('tip').unbind().bind('mouseenter', function(){
+                    t.tooltip('show');
+                }).bind('mouseleave', function(){
+                    t.tooltip('hide');
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

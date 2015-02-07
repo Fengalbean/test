@@ -3,26 +3,24 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="jquery-easyui-1.4.1/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="jquery-easyui-1.4.1/themes/icon.css">
     <script type="text/javascript" src="jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="angularjs/js/angular.min.js"></script>
+    <script>
+        $(function(){
+            $('#dd').datebox({
+                onSelect: function(date){
+                    alert(date.getFullYear()+":"+(date.getMonth()+1)+":"+date.getDate());
+                }
+            });
+        })
+
+    </script>
 </head>
 <body>
-<div ng-controller="TestCtrl">
-    <input type="text" value="" id="a" />
-</div>
-<script type="text/javascript">
-    var TestCtrl = function(){
-        console.log('ok');
-    }
-    //angular.bootstrap(document.documentElement);
-    var app = angular.module('MyApp', [], function(){console.log('here')});
-    app.controller('TestCtrl',
-            function($scope){
-                console.log('ok');
-            }
-    );
-
-
-</script>
+<button class="btn btn-default">按钮</button>
+<button id="dd" >按钮</button>
 </body>
 </html>

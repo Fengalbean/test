@@ -2,7 +2,8 @@
 <html ng-app>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="Scope1.css" />
+        <link rel="stylesheet" href="../../../bootstrap/3.2.0/css/bootstrap.min.css">
+		<!--<link rel="stylesheet" type="text/css" href="Scope1.css" />-->
 	</head>
 	<body>
 		<div class="show-scope-demo">
@@ -10,11 +11,16 @@
 				Hello {{name}}!
 			</div>
 			<div ng-controller="ListCtrl">
-				<ol>
-					<li ng-repeat="name in names">
-						{{name}} from {{department}}
-					</li>
-				</ol>
+				<table class="table table-hover">
+                <tr ng-repeat="name in names">
+					<td >
+						{{name}}
+					</td>
+                    <td >
+                        {{name}}
+                    </td>
+				</tr>
+                </table>
 			</div>
 		</div>
 	</body>

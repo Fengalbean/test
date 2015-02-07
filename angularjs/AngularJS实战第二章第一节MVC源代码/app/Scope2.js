@@ -4,3 +4,4 @@ function EventController($scope) {
 		$scope.count++;
 	});
 }
+

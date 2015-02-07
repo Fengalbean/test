@@ -2,17 +2,18 @@
 <html ng-app>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="../../../bootstrap/3.2.0/css/bootstrap.min.css">
     </head>
     <body>
         <div ng-controller="CommonController">
             <div ng-controller="Controller1">
                 <p>{{greeting.text}},Angular</p>
-                <button ng-click="test1()">test1</button>
+                <button class="btn btn-info btn-sm" ng-click="test1()">test1</button>
             </div>
             <div ng-controller="Controller2">
                 <p>{{greeting.text}},Angular</p>
-                <button ng-click="test2()">test2</button>
-                <button ng-click="commonFn()">通用</button>
+                <button class="btn btn-info btn-sm" ng-click="test2()">test2</button>
+                <button class="btn btn-info btn-sm" ng-click="commonFn()">通用</button>
             </div>
         </div>
     </body>
