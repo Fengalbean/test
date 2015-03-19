@@ -2,18 +2,30 @@
 <html ng-app>
     <head>
         <meta charset="utf-8">
+<<<<<<< HEAD
         <link rel="stylesheet" href="../../../bootstrap/3.2.0/css/bootstrap.min.css">
+=======
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
     </head>
     <body>
         <div ng-controller="CommonController">
             <div ng-controller="Controller1">
                 <p>{{greeting.text}},Angular</p>
+<<<<<<< HEAD
                 <button class="btn btn-info btn-sm" ng-click="test1()">test1</button>
             </div>
             <div ng-controller="Controller2">
                 <p>{{greeting.text}},Angular</p>
                 <button class="btn btn-info btn-sm" ng-click="test2()">test2</button>
                 <button class="btn btn-info btn-sm" ng-click="commonFn()">通用</button>
+=======
+                <button ng-click="test1()">test1</button>
+            </div>
+            <div ng-controller="Controller2">
+                <p>{{greeting.text}},Angular</p>
+                <button ng-click="test2()">test2</button>
+                <button ng-click="commonFn()">通用</button>
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
             </div>
         </div>
     </body>

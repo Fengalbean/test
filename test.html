@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script>
+        var myDate = new Date();
+        var oneDay = 1000 * 60 * 60 * 24;
+        var lastDate = new Date(myDate - oneDay * 1);
+        var year = myDate.getFullYear(),
+            month =  myDate.getMonth()+ 1,
+             day = myDate.getDate()-1;
+        var lastYear = lastDate.getFullYear();
+        var lastMonth = lastDate.getMonth() + 1;
+        var date= year + '-'+month + '-' + day;
+        date = new Date(Date.parse(date.replace(/-/g, "/")));
+        date = date.getTime();
+        console.log(date);
+        function customTime(y,m,d){
+            var y = 0 + y,
+                m = 0 + m,
+                d = 0 + d;
+            var result;
+            var myDate = new Date();
+            var oneDay = 1000 * 60 * 60 * 24;//一天时间
+            var year = myDate.getFullYear()+parseInt(y),
+               month = myDate.getMonth() + 1 + parseInt(m),
+                 day = myDate.getDate() + parseInt(d);
+            var date= year + '-'+month + '-' + day;
+            date = new Date(Date.parse(date.replace(/-/g, "/")));
+            result = date.getTime();
+            console.log(result);
+            return result;
+        }
+        customTime(0,0,-1);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var lastDate = new Date(myDate - oneDay * 6);
+        var date="2014-12-06";
+        var date1 = new Date(Date.parse(date.replace(/-/g, "/")));
+        var date2 = date1.getTime();
+        console.log(date2);
+        var l = toString(date2).length;
+        var re = date2.substring(0,l-3);
+        console.log(re);
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

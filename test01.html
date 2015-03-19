@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.btn').on(['click','dbclick'],[function(){
+                console.log('单击事件')
+            },function(){
+                console.log('双击事件')
+            }])
+        });
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-info btn-lg">测试</button>
+</div>
+
+</body>
+</html>

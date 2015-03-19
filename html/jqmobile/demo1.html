@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="../../jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="../../jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>页面标题</h1>
+    </div>
+
+    <div data-role="content">
+        <p>页面内容</p>
+        <p>定位图标:</p>
+        <a href="#link" data-role="button" data-icon="search" data-iconpos="top">顶部</a>
+        <a href="#link" data-role="button" data-icon="search" data-iconpos="right">右侧</a>
+        <a href="#link" data-role="button" data-icon="search" data-iconpos="bottom">底部</a>
+        <a href="#link" data-role="button" data-icon="search" data-iconpos="left">左侧</a>
+        <div data-role="collapsible">
+            <h1>点击我 - 我可以折叠！</h1>
+            <p>我是可折叠的内容。</p>
+        </div>
+        <button class="ui-btn ui-corner-all">anniu </button>
+        <h2>包含缩略图的列表：</h2>
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#"><img src="chrome.png"></a>
+            </li>
+            <li>
+                <a href="#"><img src="firefox.png"></a>
+            </li>
+        </ul>
+        <div data-role="fieldcontain">
+            <label for="points">Points:</label>
+            <input type="range" name="points" id="points" value="50" min="0" max="100">
+        </div>
+        <div class="ui-grid-d">
+            <div class="ui-block-a"><a href="#" data-role="button">第一列</a><br>
+                <span>第一列：This is some text. This is some text. This is some text. This is some text. This is some text.</span>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" data-role="button">第二列</a><br>
+                <span>第二列：This is some text. This is some text. This is some text. This is some text.</span>
+            </div>
+            <div class="ui-block-c">
+                <a href="#" data-role="button">第三列</a><br>
+                <span>第三列：This is some text. This is some text. This is some text. This is some text.</span>
+            </div>
+            <div class="ui-block-d">
+                <a href="#" data-role="button" class="">第四列</a><br>
+
+            </div>
+            <div class="ui-block-e">
+                <a href="#" data-role="button">第五列</a><br>
+                <span>第五列：This is some text. This is some text. This is some text. This is some text.</span>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h1>页面底部内容</h1>
+    </div>
+</div>
+
+
+</body>
+</html>

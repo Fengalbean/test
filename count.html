@@ -961,14 +961,29 @@ $(function(){
         return ('体检前:'+scoreBefore+'体检后'+scoreAfter);
 
     }
+<<<<<<< HEAD
     var count = {
         arrOne:[],
         countScore:function(object){
+=======
+    console.log(count());
+    var count = {
+        scoreBefore: 0,//体检后初始分数
+        scoreAfter: 0,//保养后初始分数
+        arrOne:[],//存放相同数组
+        loop:function(array){//遍历数组并添加至数组
+            $.each(array,function(i,v){
+                count.arrOne.push(v)
+            })
+        },
+        countScore:function(object){//计算分数
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
             $.each(object,function(i,v){
                 var before = v.damageLevelBefore;
                 var after = v.damageLevelAfter;
                 var score = v.score;
                 if(before == 1){
+<<<<<<< HEAD
                     report.scoreBefore += score;
                 }
                 if(before == 2){
@@ -1020,12 +1035,42 @@ $(function(){
             })
         },
         excute:function(){
+=======
+                    count.scoreBefore += score;
+                }
+                if(before == 2){
+                    count.scoreBefore += score*0.7;
+                }
+                if(before == 3){
+                    count.scoreBefore += score*0.4;
+                }
+                if(before == 4 || before == 0){
+                    count.scoreBefore += 0;
+                }
+                //体检之后
+                if(after == 1){
+                    count.scoreAfter += score;
+                }
+                if(after == 2){
+                    count.scoreAfter += score*0.7;
+                }
+                if(after == 3){
+                    count.scoreAfter += score*0.4;
+                }
+                if(after == 4 || before == 0){
+                    count.scoreAfter += 0;
+                }
+            })
+        },
+        execute:function(){//执行计算
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
             var d1 = report.systems[0].subSystem[0].parts;
             var d2 = report.systems[0].subSystem[1].parts;
             var d3 = report.systems[0].subSystem[2].parts;
             count.countScore(d1);
             count.countScore(d2);
             count.countScore(d3);//行驶系统前三项
+<<<<<<< HEAD
 //            console.log(report.scoreAfter);
 //            console.log(report.scoreBefore);
             var d5 = report.systems[0].subSystem[4].parts;//随车工具
@@ -1036,10 +1081,21 @@ $(function(){
                 }else{
                     report.scoreBefore += 0.6;
                     report.scoreAfter += 0.6;
+=======
+            var d5 = report.systems[0].subSystem[4].parts;//随车工具
+            $.each(d5,function(i,v){
+                if(v.exist == 0){
+                    count.scoreBefore += 0;
+                    count.scoreAfter += 0;
+                }else{
+                    count.scoreBefore += 0.6;
+                    count.scoreAfter += 0.6;
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
                 }
             })
             var d6 = report.systems[0].subSystem[5];//轮胎扭力
             var d4 = report.systems[0].subSystem[3];//备胎
+<<<<<<< HEAD
 
             //灯光系统 7项
             var l1 = report.systems[1].subSystem[0].parts;
@@ -1096,6 +1152,49 @@ $(function(){
     console.log(report.scoreBefore);
 
     $('#test').val('xxxxxx');
+=======
+
+            //灯光系统 7项
+            var l1 = report.systems[1].subSystem[0].parts;
+            var l2 = report.systems[1].subSystem[1].parts;
+            var l3 = report.systems[1].subSystem[2].parts;
+            var l4 = report.systems[1].subSystem[3];//刹车灯
+            var l5 = report.systems[1].subSystem[4].parts;
+            var l6 = report.systems[1].subSystem[5].parts;
+            var l7 = report.systems[1].subSystem[6];//牌照灯
+            count.countScore(l1);
+            count.countScore(l2);
+            count.countScore(l3);
+            count.countScore(l5);
+            count.countScore(l6);//灯光系统前6项
+            //制动系统 3项
+            var b1 = report.systems[2].subSystem[0].parts;
+            var b2 = report.systems[2].subSystem[1].parts;
+            var b3 = report.systems[2].subSystem[2];
+            count.countScore(b1);
+            count.countScore(b2);
+            //空调系统 4项
+            var air = report.systems[3].subSystem;
+            count.loop(air);
+            //动力系统 10项
+            var power = report.systems[4].subSystem;
+            count.loop(power)
+            //行车电脑系统
+            var computer = report.systems[5].subSystem;
+            count.loop(computer)
+            //清洗系统 3项
+            var c1 = report.systems[6].subSystem[0].parts;
+            var c2 = report.systems[6].subSystem[1];
+            var c3 = report.systems[6].subSystem[2];
+            count.loop(c1);
+            count.arrOne.push(d4,d6,l4,l7,b3,c2,c3);
+            count.countScore(count.arrOne);
+            return ('体检前:'+count.scoreBefore+'保养后'+count.scoreAfter);
+        }
+
+    }
+    console.log(count.execute())
+>>>>>>> 8232e5381d45fdf6bb27b48685c03dceb1a6bbf0
 })
 </script>
 </head>
